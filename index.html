@@ -3,6 +3,7 @@
   <head>
     <title>Instascan</title>
     <script type="text/javascript" src="js/instascan.min.js"></script>
+    <script type="text/javascript" src="js/script.js" defer></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <link href="css/style.css" rel="stylesheet" />
@@ -13,24 +14,7 @@
       <h2>Camaras</h2>
     </section>
     <script type="text/javascript">
-      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-      scanner.addListener('scan', function (content) {
-        console.log(content);
-        if(content == "C15212186"){
-            console.log("Asistencia!");
-            alert("Asistencia!");
-        }
-      });
-      Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-          alert("Cantidad de camaras: " + cameras.length);
-          scanner.start(cameras[0]);
-        } else {
-          console.error('No cameras found.');
-        }
-      }).catch(function (e) {
-        console.error(e);
-      });
+      
 
     </script>
   </body>
