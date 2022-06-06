@@ -10,7 +10,6 @@ scanner.addListener('scan', function (content) {
     if (cameras.length > 0) {
       alert("Cantidad de camaras: " + cameras.length);
       scanner.start(cameras[0]);
-
     } else {
       console.error('No cameras found.');
     }
