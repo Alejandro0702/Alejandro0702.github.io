@@ -6,8 +6,15 @@
   </head>
   <body>
     <video id="preview"></video>
+    <div>
+      <b>Preferred camera:</b>
+      <select id="cam-list">
+          <option value="environment" selected>Environment Facing (default)</option>
+          <option value="user">User Facing</option>
+      </select>
+  </div>
     <script type="text/javascript">
-
+    const camList = document.getElementById('cam-list');
       
      
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
@@ -20,7 +27,7 @@
       });
       Instascan.Camera.getCameras().then(function (cameras) {
         if (cameras.length > 0) {
-          scanner.start(cameras[0]);
+          scanner.start(cameras[1]);
         } else {
           console.error('No cameras found.');
         }
